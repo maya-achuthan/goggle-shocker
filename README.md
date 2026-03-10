@@ -1,4 +1,4 @@
-# Gogglew Shocker
+# Goggle Shocker
 
 BMEG 257 sleep-tracking device controller. Reads voltage from a biosensor, classifies sleep stages, and triggers a wake alarm when the subject enters light sleep (N1) during a configured time window.
 
@@ -40,7 +40,7 @@ goggle-shocker/
 
 ```bash
 git clone <repo-url>
-cd sleep-shocker
+cd goggle-shocker
 ```
 
 ### 2. Create a virtual environment
@@ -54,7 +54,15 @@ source .venv/bin/activate     # Mac/Linux
 You only need to do this once. Every time you open a new terminal, run `source .venv/bin/activate` before working.
 
 
-### 3. Run the main loop
+### 3. Run the tests
+
+```bash
+python -m unittest discover -s tests
+```
+
+This will discover and run all tests in the `tests/` directory without needing pytest installed.
+
+### 4. Run the main loop
 
 ```bash
 python main.py
