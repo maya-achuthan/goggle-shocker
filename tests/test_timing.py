@@ -1,14 +1,19 @@
+import unittest
 from core.data_processor import DataProcessor
 
 
-def test_within_range():
-    dp = DataProcessor(100, 200)
-    assert dp.is_within_range(150) is True
-    assert dp.is_within_range(50) is False
-    assert dp.is_within_range(250) is False
+class TestDataProcessor(unittest.TestCase):
+    def test_within_range(self):
+        dp = DataProcessor(100, 200)
+        self.assertTrue(dp.is_within_range(150))
+        self.assertFalse(dp.is_within_range(50))
+        self.assertFalse(dp.is_within_range(250))
+
+    def test_boundary_values(self):
+        dp = DataProcessor(100, 200)
+        self.assertTrue(dp.is_within_range(100))   # inclusive start
+        self.assertTrue(dp.is_within_range(200))   # inclusive end
 
 
-def test_boundary_values():
-    dp = DataProcessor(100, 200)
-    assert dp.is_within_range(100) is True   # inclusive start
-    assert dp.is_within_range(200) is True   # inclusive end
+if __name__ == "__main__":
+    unittest.main()
