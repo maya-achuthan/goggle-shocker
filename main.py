@@ -4,17 +4,16 @@ from core.data_processor import DataProcessor
 from core.models import Person, SleepReading
 
 def main() -> None:
-    person = Person()
-    # processor = DataProcessor()
-    classifier = StageClassifier()
 
-    start_unix, end_unix = get_wake_window()
-    processor = DataProcessor(start_unix, end_unix)
+    person = Person()
+
+    classifier = StageClassifier()
+    processor = DataProcessor()
 
     while True:
 
         # simulate device reading
-        raw_voltage = random.uniform(0, 5)
+        raw_voltage = random.uniform(0, 5) #generate any random number between 0 and 5 to simulate a voltage reading. 
 
         # get current time
         current_time = time.time() #returns current unix time
