@@ -3,10 +3,10 @@ class DataProcessor:
         self.start_time = start_time
         self.end_time = end_time
 
-start = float(input("Enter start time: "))
-end = float(input("Enter end time: "))
+    start = float(input("Enter start time: "))
+    end = float(input("Enter end time: "))
         
-processor = DataProcessor(start, end)
+    processor = DataProcessor(start, end)
 
     def is_within_range(self, current_time: float) -> bool:
         return self.start_time <= current_time <= self.end_time
